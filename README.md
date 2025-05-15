@@ -115,4 +115,4 @@ Detailed performance metrics and visualizations can be found in the evaluation n
 
 ## License
 
-This project is available under the MIT License - see the LICENSE file for details.
+This project is available under the MIT License.
