@@ -99,7 +99,6 @@ The project follows these key steps:
 
 4. **Evaluation Metrics**:
    - Coverage (percentage of products that can receive recommendations)
-   - Diversity of recommendations
    - Execution time
    - Memory efficiency
    - Scalability with dataset size
