@@ -48,7 +48,7 @@ Products were classified through both automated methods and manual review for ac
 .
 ├── Dataset/                              # Data files and processed outputs
 │   ├── Assignment-1_Data.xlsx            # Raw transaction data
-│   ├── df_merged_items_category.xlsx     # Main dataset with product categories
+│   ├── full_validated_dataset.xlsx       # Main dataset with product categories
 │   ├── distinct_products_with_categories.xlsx  # Unique products listing
 │   └── Analysis_plots/                   # Visualization outputs
 ├── Models/                               # Implementation of algorithms
