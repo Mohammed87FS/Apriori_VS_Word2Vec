@@ -1,10 +1,10 @@
 ,Whole Dataset,First Third,Last Two Thirds
-Kitchen & Dining → Kitchen & Dining,1248,900,5598
+Kitchen & Dining → Kitchen & Dining,1282,964,6032
 Garden & Outdoor → Garden & Outdoor,0,2434,0
-Fashion & Accessories → Fashion & Accessories,650,486,1010
-Storage & Organization → Storage & Organization,490,506,772
-Home Decor → Home Decor,0,382,0
-Storage & Organization → Kitchen & Dining,0,0,377
-Kitchen & Dining → Storage & Organization,0,0,377
-Storage & Organization → Kids & Toys,154,0,0
-Kids & Toys → Storage & Organization,154,0,0
+Fashion & Accessories → Fashion & Accessories,668,508,1048
+Storage & Organization → Storage & Organization,546,522,848
+Home Decor → Home Decor,0,410,0
+Kitchen & Dining → Storage & Organization,0,0,397
+Storage & Organization → Kitchen & Dining,0,0,397
+Storage & Organization → Kids & Toys,185,0,0
+Kids & Toys → Storage & Organization,185,0,0
