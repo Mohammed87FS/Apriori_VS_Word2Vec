@@ -1,7 +1,8 @@
 ,Whole Dataset,First Third,Last Two Thirds
-Home Decor → Home Decor,3220,1829,2850
-Kitchen & Dining → Kitchen & Dining,2755,2039,2307
-Stationery & Office → Stationery & Office,1568,998,1329
-Seasonal & Holidays → Seasonal & Holidays,1366,661,1143
-Kids & Toys → Kids & Toys,0,561,502
-Fashion & Accessories → Fashion & Accessories,915,0,0
+Home Decor → Home Decor,15848,8252,14248
+Kitchen & Dining → Kitchen & Dining,10976,8264,8736
+Stationery & Office → Stationery & Office,5858,3630,5220
+Seasonal & Holidays → Seasonal & Holidays,7946,0,6730
+Kitchen & Dining → Home Decor,0,3544,4404
+Fashion & Accessories → Fashion & Accessories,6008,0,0
+Home Decor → Kitchen & Dining,0,3544,0
