@@ -15,6 +15,7 @@ The goal is to quantitatively and qualitatively evaluate the differences in reco
 ## Dataset
 
 The analysis uses retail transaction data containing:
+
 - Transaction IDs (BillNo)
 - Product names (Itemname)
 - Categories
@@ -29,6 +30,7 @@ The dataset is analyzed for key characteristics including unique products, trans
 Products are organized into a hierarchical category structure:
 
 #### Main Categories:
+
 - Home & Living
 - Personal Items
 - Entertainment & Hobbies
@@ -36,29 +38,42 @@ Products are organized into a hierarchical category structure:
 - Office & Craft
 
 Each main category is further divided into subcategories. For example:
+
 - **Home & Living**: Home Decor, Lighting, Kitchen & Dining, Textiles & Cozy Items, etc.
 - **Personal Items**: Fashion & Accessories, Electronics & Gadgets
 - **Entertainment & Hobbies**: Kids & Toys, Books & Magazines, Games & Puzzles, etc.
 
-Products were classified through both automated methods and manual review for accuracy.
+Products were classified through both automated methods and manual review for accuracy (There are more details regarding this in the thesis "3.1.1 Dataset Overview" section)
 
 ## Repository Structure
 
 ```
-.
-├── Dataset/                              # Data files and processed outputs
-│   ├── Assignment-1_Data.xlsx            # Raw transaction data
-│   ├── full_validated_dataset.xlsx       # Main dataset with product categories
-│   ├── distinct_products_with_categories.xlsx  # Unique products listing
-│   └── Analysis_plots/                   # Visualization outputs
-├── Models/                               # Implementation of algorithms
-│   └── Models_Evaluator.ipynb            # Evaluation framework for comparing models
-├── Finding_Categories/                   # Documentation of categorization methodology
-│   └── README.md                         # Detailed explanation of category structure
-├── Dataset-Analysis.ipynb                # Data exploration and preprocessing
-├── Apriori.ipynb                         # Implementation of Apriori algorithm
-├── Words2vec.ipynb                       # Implementation of Word2Vec approach
-└── README.md                             # Project overview and instructions
+├── Dataset/
+│   ├── Analysis_plots/
+│   ├── Kaggle_Dataset_Pre_Processing/                    # The original Kaggle Dataset without preprocessing
+│   ├── distinct_products_with_categories.xlsx            # Unique products category mapping
+│   ├── full_validated_dataset.xlsx                       # Final dataset that is validated and sent to the algorithms
+│   ├── not_validated_dataset_with_category.xlsx          # Contains the full dataset with category mapping for each product coming from the assignment of gpt 3.5 turbo
+│   ├── Original_Dataset.xlsx
+│   ├── unique_items.xlsx                                 # Unique products
+│   └── validated_distinct_products_with_categories.xlsx  # Manually validated category mapping dataset (row by row manual vaildation)
+│
+├── Models/
+│   ├── Models_Evaluator.ipynb                            # Complete evaluation code
+│   └── Models_Parameters_Grid_Search.ipynb               # Parameter optimization code
+│
+├── Results/                                              # Generated analysis outputs
+│   ├── whole_dataset/                                    # Full dataset results
+│   ├── first_third/                                      # analysis (first 1/3)
+│   └── last_two_thirds/                                  # analysis (last 2/3)
+│
+│
+├── Finding_Categories/                                   # Categorization methodology
+│   ├── high_level_categories.xlsx
+│   ├── low_level_openai_category_products_mapping.ipynb
+│   └── *.ipynb                                           # Category assignment notebooks
+├── Dataset-Analysis.ipynb                                # Full data explorationn for the third thesis captial
+
 ```
 
 ## Requirements
@@ -82,18 +97,20 @@ pip install pandas numpy matplotlib seaborn scikit-learn mlxtend gensim jupyter
 ## Usage
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/Mohammed87FS/Apriori_VS_Word2Vec.git
    cd Apriori_VS_Word2Vec
    ```
 
 2. Run the Jupyter notebooks in sequence:
+
    ```bash
    jupyter notebook
    ```
-   
+
    - First, run `Dataset-Analysis.ipynb` to understand the data
-   - Then, explore the implementations in `Apriori.ipynb` and `Words2vec.ipynb`
+   - Then, explore the implementations in `Models_Evaluator.ipynb`
    - Finally, check comparative analysis in `Models_Evaluator.ipynb`
 
 ## Methodology
@@ -101,17 +118,20 @@ pip install pandas numpy matplotlib seaborn scikit-learn mlxtend gensim jupyter
 The project follows these key steps:
 
 1. **Data Preprocessing**:
+
    - Cleaning transaction data (handling missing values, duplicates)
    - Organizing products into the hierarchical category structure
    - Splitting data into training and evaluation sets
 
 2. **Apriori Implementation**:
+
    - Convert transactions to appropriate basket format
    - Generate frequent itemsets with various support thresholds (0.001-0.01)
-   - Create association rules with confidence thresholds (0.1-0.5) 
+   - Create association rules with confidence thresholds (0.1-0.5)
    - Measure performance and memory usage across different parameter settings
 
 3. **Word2Vec Implementation**:
+
    - Format transactions as "sentences" of products for training
    - Train product embeddings using Skip-gram architecture
    - Generate similar product recommendations based on vector similarity
@@ -129,6 +149,7 @@ The project follows these key steps:
 The comparative analysis reveals distinct strengths and weaknesses of each approach:
 
 - **Apriori**:
+
   - Provides highly interpretable rules with clear confidence metrics
   - Excellent for identifying direct product relationships
   - Struggles with scalability on large product catalogs
@@ -143,3 +164,14 @@ The comparative analysis reveals distinct strengths and weaknesses of each appro
   - Less interpretable recommendations requiring additional validation
 
 Detailed performance metrics, visualizations, and recommendation examples can be found in the evaluation notebook.
+
+### Contact
+
+- **Author**: Mohammed Alhamadani
+- **Email**: mohammedamaar165@gmail.com
+- **LinkedIn**: https://www.linkedin.com/in/mohammed-ammar-burhan-al-hamadani-a88518302/
+- **Institution**: FH St.Pölten
+
+## Acknowledgments
+
+- Thanks to my supervsior FH-Prof. Dipl.-Ing. Dr. Markus Seidl, Bakk. for his guidance and support
