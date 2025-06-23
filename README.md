@@ -18,7 +18,7 @@ The analysis uses retail transaction data containing:
 
 - Transaction IDs (BillNo)
 - Product names (Itemname)
-- Categories
+- Categories (Manually added)
 - Dates
 - Quantities
 - Customer IDs
