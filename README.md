@@ -123,21 +123,35 @@ The project follows these key steps:
    - Organizing products into the hierarchical category structure
    - Splitting data into training and evaluation sets
 
-2. **Apriori Implementation**:
+2. **Parameter Optimization:**
+   Both algorithms use grid-search optimized parameters to find the configuration where both models have the highst agreement percentage regarding their recommendations to have a better comparasion foundation.
 
-   - Convert transactions to appropriate basket format
-   - Generate frequent itemsets with various support thresholds (0.001-0.01)
-   - Create association rules with confidence thresholds (0.1-0.5)
-   - Measure performance and memory usage across different parameter settings
+   **Apriori Configuration:**
 
-3. **Word2Vec Implementation**:
+   - Minimum Support: 0.01 (1% of transactions)
+   - Minimum Confidence: 0.1 (10% confidence threshold)
 
-   - Format transactions as "sentences" of products for training
-   - Train product embeddings using Skip-gram architecture
-   - Generate similar product recommendations based on vector similarity
-   - Experiment with different window sizes and dimensionality
+   **Word2Vec Configuration:**
 
-4. **Evaluation Metrics**:
+   - Vector Size: 50 dimensions
+   - Window Size: 10 (context window)
+   - Training Epochs: 10
+   - Min Count: 20 (minimum word frequency)
+   - Similarity Threshold: 0.5 for recommendations
+   - Architecture: Skip-gram model
+
+3. **Apriori Implementation**:
+
+   - Converts transactions to appropriate basket format
+   - Measure performance and memory usage across different dataset partions
+
+4. **Word2Vec Implementation**:
+
+   - Formats transactions as "sentences" of products for training
+   - Trains product embeddings using Skip-gram architecture
+   - Generates similar product recommendations based on vector similarity
+
+5. **Evaluation Metrics**:
    - Coverage (percentage of products that can receive recommendations)
    - Execution time for model training and recommendation generation
    - Memory efficiency during training and storage
@@ -153,13 +167,11 @@ The comparative analysis reveals distinct strengths and weaknesses of each appro
   - Provides highly interpretable rules with clear confidence metrics
   - Excellent for identifying direct product relationships
   - Struggles with scalability on large product catalogs
-  - Poor performance with sparse transaction data
-  - Memory usage grows exponentially with lower support thresholds
+  - High memory usage grows
 
 - **Word2Vec**:
   - Offers superior recommendation coverage across the product catalog
-  - Handles sparse transaction data effectively
-  - Discovers non-obvious product relationships
+  - Discovers more product relationships
   - Scales better with increasing dataset size
   - Less interpretable recommendations requiring additional validation
 
